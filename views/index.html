@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info Share</title>
+  <script src="main.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900 p-4">
+  <div class="max-w-xl mx-auto">
+    <h1 class="text-3xl font-bold mb-4">📢 Info Share</h1>
+    <div class="mb-4">
+      <input id="name" placeholder="Ismingiz" class="border p-2 w-full mb-2">
+      <textarea id="content" placeholder="Xabar..." class="border p-2 w-full mb-2"></textarea>
+      <input type="text" id="image" placeholder="Rasm URL (ixtiyoriy)" class="border p-2 w-full mb-2">
+      <button onclick="submitPost()" class="bg-blue-600 text-white px-4 py-2 rounded">Yuborish</button>
+    </div>
+    <div id="posts" class="space-y-4"></div>
+  </div>
+</body>
+</html>
