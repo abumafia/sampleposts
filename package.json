@@ -1,15 +1,15 @@
 {
   "name": "node-vercel-app",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.js",  // Asosiy fayl nomini server.js qilib o'zgartiring
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js"  // Start skriptini server.js bilan o'zgartiring
   },
   "dependencies": {
     "express": "^4.17.1",
     "ejs": "^3.1.10"
   },
   "engines": {
-    "node": "22.x"
+    "node": "22.x"  // Node versiyasi
   }
 }
