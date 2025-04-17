@@ -1,14 +1,15 @@
-
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 3000;
+
+// PORT muhitdan olinadi (Render/Heroku shunga tayanadi)
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const POSTS_FILE = path.join(__dirname, 'data/posts.json');
 
@@ -68,7 +69,9 @@ app.delete('/api/posts/:id', (req, res) => {
   res.status(204).send();
 });
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
-app.get('/admin', (req, res) => res.sendFile(__dirname + '/views/admin.html'));
+// Static HTML pages
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
+app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'views', 'admin.html')));
 
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+// Start server
+app.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));
